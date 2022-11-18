@@ -1,0 +1,19 @@
+img{
+    max-width: 2.5em; height: auto;
+    margin-left: 0.7em;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+footer{
+    background-color: rgb(255, 255, 255);
+}
+
+hr {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}

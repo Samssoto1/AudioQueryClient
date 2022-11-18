@@ -1,0 +1,135 @@
+/* Gets rid of bootstrap box shadow on input */
+input:focus, input.form-control:focus {
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* Component container */
+#loginContainer{
+  display: flex;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+/* Main Styles... */
+#formSignin {
+  width: 100%;
+  max-width: 30em;
+  padding: 15px;
+  margin: auto;
+}
+
+/* Adds bottom margin to all inputs */
+input {
+  max-height: 55px;
+  margin-bottom: 10px;
+}
+
+/* Spaces Icon slightly away from Input label */
+mat-icon{
+  margin-right: 0.2em;
+}
+
+/* Handles styles for error message */
+.help-block
+{
+  text-align: left !important;
+  color: white;
+}
+
+/* Creates Border when form input is invalid and touched */
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+/* Positions the show password eye button */
+#eye-icon{
+  position: absolute;
+	top: 30%;
+	right: 10px;
+}
+
+/* Handle Reset Password Button */
+#reset-password-div{
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+#reset-password-btn{
+  cursor: pointer;
+  color: #ffc6be;
+}
+
+#reset-password-btn:hover{
+  text-decoration: underline;
+  /* color: #155cb8; */
+}
+
+/* Handle SignUp Button CSS */
+#signUpDiv{
+  margin-top: 0.9em;
+  margin-bottom: 0.9em;
+}
+
+#signUpBtn{
+  cursor: pointer;
+  color: #ffc6be;
+}
+
+#signUpBtn:hover{
+  text-decoration: underline;
+}
+
+/* Removes ugly bootstrap button glow on click */
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.btn:hover{
+  background-color: #bd867c;
+}
+
+.card{
+  /* background-image: url("../../../assets/images/SignInBackground"); */
+  background:linear-gradient(0deg, rgba(183, 149, 237, 0.3), rgba(245, 238, 242, 0.3)), url('../../../assets/images/SignInBackground');
+  background-repeat: no-repeat, repeat;
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: center;
+  border: 0px;
+}
+
+div .card-body{
+  height: 34em;
+}
+
+
+.card{
+  border-radius: 25px;
+  box-shadow: 0 12px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h1{
+  font-size: 2.6em;
+}
+
+#mascot{
+  max-height: 7.5em;
+  margin-left: 1.2em;
+  margin-bottom: 1em;
+}
+
+form{
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+button{
+  max-width: 50%;
+  background-color: #af7265;
+  color: white;
+}

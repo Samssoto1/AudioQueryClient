@@ -1,0 +1,15 @@
+#create-a-quiz-btn{
+    cursor: pointer;
+    /* color: #1a73e8; */
+}
+
+#create-a-quiz-btn:hover{
+    text-decoration: underline;
+    color: #155cb8;
+}
+
+#quizList{
+    max-height: 14em;
+    overflow-y: auto;
+    overflow-x: none;
+}

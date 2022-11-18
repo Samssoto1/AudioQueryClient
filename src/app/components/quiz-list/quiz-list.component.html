@@ -1,0 +1,9 @@
+<div class="col-md-12" id="quizList">
+    <div id="quizCont" class="quiz" *ngFor="let quiz of list_of_quizzes">
+          <app-quiz class="" [quiz]=quiz></app-quiz>
+    </div>
+
+    
+    <!-- <p *ngIf="isLoading"> Loading....</p> -->
+    <span id="create-a-quiz-btn" (click)="createAQuiz()" *ngIf="(list_of_quizzes?.length < 1)">No Quizzes exist yet. Create one?</span>
+</div>

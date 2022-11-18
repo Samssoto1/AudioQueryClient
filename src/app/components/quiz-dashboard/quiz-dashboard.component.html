@@ -1,0 +1,28 @@
+<mat-sidenav-container id="content">
+    <div class="border-bottom">
+      <h1 class="text-center">{{quizTitle}}</h1>
+    </div>
+    
+      <button id="sidebarToggle" mat-icon-button (click)="snav.toggle()">
+          <mat-icon class="text-center">arrow_forward_ios</mat-icon>
+      </button>
+    
+    <!-- <mat-sidenav opened #snav mode="side" id="sideNav">   -->
+    <mat-sidenav closed #snav mode="side" id="sideNav">
+        <h2 class="noSelect" id="quiz-header">Questions</h2>
+        <button id="newBtn" (click)="newQuestion(quizId)">
+          + Add Question
+        </button>
+        <div id="questionSideMenu">
+          <app-question-list [quizId]="quizId" [questionInfo]="questionInfo" (saveAvailable)="updateSave()"></app-question-list>
+        </div>
+    </mat-sidenav>
+    
+    <div class="container">
+      <div id="questionCreator">
+      <button (click)="save()" [disabled]="!saveAvaliable" id="saveBtn" class="btn btn-warning">Save</button>
+        <app-question-creator *ngIf="selectedQuestion" [selectedQuestion]="selectedQuestion"></app-question-creator>
+      </div>
+    </div>
+      
+  </mat-sidenav-container>

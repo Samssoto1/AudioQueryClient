@@ -1,0 +1,35 @@
+<header class="bg-dark text-white pb-2 pt-2">
+<!-- <header class="p-3 bg-dark text-white"> -->
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a [routerLink]="['/']" class="d-flex align-items-center text-white text-decoration-none">
+        <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
+        <!-- <img id="logo" src="../assets/svgs/logoWhite.svg" alt=""> -->
+        <!-- <h4 class="px-2">AudioQuery</h4> -->
+        <img id="logoInline" src="../../assets/images/audioQueryLogoInline" alt="">
+      </a>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <!-- <li><a  [routerLink]="['/']" [routerLinkActive]="['active']" class="nav-link px-2 text-secondary">Home</a></li> -->
+        <!-- <li><a  class="nav-link px-2 text-white">Features</a></li>
+        <li><a  class="nav-link px-2 text-white">Pricing</a></li>
+        <li><a  class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a  class="nav-link px-2 text-white">About</a></li> -->
+      </ul>
+
+      <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+      </form> -->
+
+      <div class="text-end btn-toolbar">
+        <a *ngIf="!userIsAuthenticated"[routerLink]="['/login']" class="btn btn-outline-light me-2">Login</a>
+        <a *ngIf="!userIsAuthenticated"[routerLink]="['register']" class="btn btn-warning">Sign-up</a>
+        <a *ngIf="userIsAuthenticated" (click)="goToAccount()" class="btn btn-outline-light me-2">My Account</a>
+        <a *ngIf="userIsAuthenticated" (click)="createAQuiz()" class="btn btn-warning me-2">Create Quiz</a>
+        <a *ngIf="userIsAuthenticated" (click)="onLogout()" class="btn btn-warning ">Log Out</a>
+        <!-- <button type="button" class="btn btn-outline-light me-2">Login</button> -->
+        <!-- <button type="button" class="btn btn-warning">Sign-up</button> -->
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,104 @@
+.boxShadow{
+    background-color: blue;
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.container-fluid {
+    /* Override default padding in bootstrap */
+    padding-right: 0;
+    padding-left: 0;
+    overflow-x: hidden;
+}
+
+.spacer {
+    position: absolute;
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer {
+    z-index: -1;
+    background-image: url(../../assets/svgs/wavesOpacity.svg);
+}
+
+#footer-wrap {
+    min-height: 100%;
+}
+
+#footer-main {
+    overflow: auto;
+    padding-bottom: 180px;
+    /* must be same height as the footer */
+}
+
+#footer {
+    position: relative;
+    margin-top: -180px;
+    /* negative value of footer height */
+    height: 180px;
+    clear: both;
+}
+
+.noSelect{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+
+
+
+
+/* Animation stuff */
+
+#outlet{
+    text-align: center;
+}
+
+.bubCont{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    z-index: -1;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    width: 100vh;
+    height: calc(20 / 80vh); 
+    background-color: #4fc3dc;
+    margin: 10px;
+    border-radius: 80%;
+    /* box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc; */
+    animation: animate 15s linear infinite;
+    animation-duration: calc(150s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background-color: #ff2d75;
+    /* box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75; */
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+
+

@@ -1,0 +1,98 @@
+#quiz-header{
+    text-align: center;
+}
+
+.quiz{
+    text-align: center;
+    cursor: pointer;
+}
+
+#create-a-quiz-btn{
+    cursor: pointer;
+}
+
+#create-a-quiz-btn:hover{
+    text-decoration: underline;
+    color: #155cb8;
+}
+
+.question-title{
+    text-align: center;
+    grid-column: 2;
+    font-size: 1.3em;
+}
+
+.question-btns{
+    float: right;
+    margin-left: 1em;
+}
+
+.delete-btn{
+    margin-right: 1em;
+}
+
+#questionSideMenu{
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#saveBtn{
+    float: right;
+    margin-top: 2em;
+    margin-right: 2em;
+    /* margin-right: 2em; */
+    /* margin-left: 59em; */
+}
+
+#newBtn{
+    margin: 0 auto;
+    width: 95%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 2px dashed rgba(9, 8, 8, 0.4);
+    margin-bottom: 1.5em;
+}
+
+.mat-drawer-container{
+    background-color: rgba(255, 0, 0, 0.0);
+}
+
+#sideNav{
+    min-width: 20%;
+    /* max-width: 10%; */
+}
+
+#questionCreator{
+    text-align: center;
+    box-shadow: 0 12px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    
+    background: rgb(235,183,163);
+    border-radius: 25px;
+    border: 5px;
+    margin-left: 6em;
+    margin-right: 6em;
+}
+mat-sidenav{
+    box-shadow: rgb(0 0 0 / 15%) 0px 22px 24px 0px;
+}
+
+
+#content{
+    height: 50rem !important;
+}
+
+#sidebarToggle{
+    position: absolute;
+    margin-top: 22em;
+}

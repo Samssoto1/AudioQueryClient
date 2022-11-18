@@ -1,0 +1,99 @@
+/* Gets rid of bootstrap box shadow on input */
+input:focus, input.form-control:focus {
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* Component container */
+#registerContainer{
+  display: flex;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+/* Main Styles... */
+#formRegister{
+  width: 100%;
+  max-width: 30em;
+  padding: 15px;
+  margin: auto;
+}
+
+/* Spaces Icon slightly away from Input label */
+mat-icon{
+  margin-right: 0.2em;
+}
+
+#formRegister .checkbox {
+  font-weight: 400;
+}
+
+#formRegister .form-floating:focus-within {
+  z-index: 2;
+}
+
+#formRegister input[type="password"], #formRegister input[type="text"], input[type="email"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Form error msg */
+.help-block
+{
+  text-align: left !important;
+  color: black;
+  /* color: white; */
+}
+
+
+/* Angular form specific */
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+#eye-icon{
+  position: absolute;
+	top: 30%;
+	right: 10px;
+}
+
+.card{
+  border-radius: 25px;
+}
+
+h1{
+  font-size: 2.6em;
+}
+
+#mascot{
+  max-height: 7.5em;
+  margin-left: 1.2em;
+  margin-bottom: 1em;
+}
+
+form{
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.card{
+  background-color: #ebb7a3 !important;
+  /* #ebb7a3 */
+  background: linear-gradient(0deg, rgba(183, 149, 237, 0.3), rgba(245, 238, 242, 0.3));
+  border: 0px;
+  /* background: linear-gradient(0deg, rgba(183, 149, 237, 1), rgb(189, 185, 206)); */
+  box-shadow: 0 12px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+button{
+  max-width: 70%;
+  /* background-color: #af7265; */
+  background-color: #565882 !important;
+  background: linear-gradient(0deg, rgba(183, 149, 237, 0.3), rgba(245, 238, 242, 0.3));
+  color: white;
+}

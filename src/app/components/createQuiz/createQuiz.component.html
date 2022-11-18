@@ -1,0 +1,23 @@
+<div id="createQuizCont">
+    <main id="formCreateQuiz" class="text-center">
+      <h4 class="d-flex justify-content-center">AudioQuery</h4>
+      <div class="card bg-light">
+        <div class="card-body">
+      <h1 class="h3 mb-3 fw-normal">Create A Quiz!</h1>
+        <form (ngSubmit)="onCreateQuizSubmit()" #f="ngForm">
+          <div class="form-floating">
+            <input #quizTitle="ngModel" ngModel required type="text" name="quizTitle" class="form-control" id="quizTitle" placeholder=" ">
+            <label for="quizTitle">Quiz Title</label>
+          </div>
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!f.valid && quizTitle.touched">A title for your quiz is required!</span>
+          <div class="form-floating">
+            <textarea style="resize: none;" [(ngModel)]="descChars" maxlength=210 #quizDescription="ngModel" ngModel class="form-control" name="quizDescription" id="quizDescription" placeholder=" "></textarea>
+            <span id="descCharCount" class="text-muted mb-2 float-end" *ngIf="descChars"> {{descChars.length}}/210</span>
+            <label for="quizDescription">Description</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" [disabled]="!f.valid" type="submit">Create</button>
+        </form>
+      </div>
+      </div>
+    </main>
+</div>

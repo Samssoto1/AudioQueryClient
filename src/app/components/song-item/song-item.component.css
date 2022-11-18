@@ -1,0 +1,9 @@
+li{
+    text-decoration: none;
+    margin-bottom: 1.3em;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: antiquewhite;
+}

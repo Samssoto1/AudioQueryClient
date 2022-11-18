@@ -1,0 +1,41 @@
+.question{
+    padding: 0px;
+    list-style: none;
+}
+
+.example-box {
+    display: block;
+    flex-direction: row;
+    cursor: move;
+}
+
+.cdk-drag-preview{
+
+    width: calc(100% * 1 / 5);
+    /* width: calc(100% * 1 / 7); */
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.highlight{ 
+    border:1px solid black;
+}
+
+#question{
+    margin-left: 0.5em;
+    margin-right: 0.8em;
+}

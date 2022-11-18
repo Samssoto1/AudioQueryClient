@@ -1,0 +1,62 @@
+<div class="container">
+    <span id="timerAsync">{{timer | async}}</span>
+
+
+
+
+    <span *ngIf="showTimer">{{seconds}}</span>
+    <mat-progress-bar mode="buffer" [value]="seconds * 10"></mat-progress-bar>
+
+        <!-- Game questions / answer selection -->
+        <div id="game" class="justify-center flex-column" *ngIf="showGame">
+
+            <!-- <h2 id="question"> What's the name of the song playing?</h2> -->
+            <h2 id="question">{{selectedQuestion?.question}}</h2>
+
+            <!-- Answer Choices -->
+            <div class="choice-container" [ngClass]="{selectedAnswer : selectedAnswer == selectedQuestion?.answers[0]}" (click)="getSelectedAnswer(selectedQuestion?.answers[0])">
+                <p class="choice-prefix">A</p>
+                <app-game-questionAnswer [answer]="selectedQuestion?.answers[0]"></app-game-questionAnswer>
+            </div>
+            <div class="choice-container" [ngClass]="{selectedAnswer : selectedAnswer == selectedQuestion?.answers[1]}" (click)="getSelectedAnswer(selectedQuestion?.answers[1])">
+                <p class="choice-prefix">B</p>
+                <app-game-questionAnswer [answer]="selectedQuestion?.answers[1]"></app-game-questionAnswer>
+            </div>
+            <div class="choice-container" [ngClass]="{selectedAnswer : selectedAnswer == selectedQuestion?.answers[2]}" (click)="getSelectedAnswer(selectedQuestion?.answers[2])">
+                <p class="choice-prefix">C</p>
+                <app-game-questionAnswer [answer]="selectedQuestion?.answers[2]"></app-game-questionAnswer>
+            </div>
+            <div class="choice-container" [ngClass]="{selectedAnswer : selectedAnswer == selectedQuestion?.answers[3]}" (click)="getSelectedAnswer(selectedQuestion?.answers[3])">
+                <p class="choice-prefix">D</p>
+                <app-game-questionAnswer [answer]="selectedQuestion?.answers[3]"></app-game-questionAnswer>
+            </div>
+
+        </div>
+
+        <!-- Time Remaining -->
+        <div *ngIf="showTimeAnswered" id="timeAnsweredCont">
+            <span>Answered in {{timeAnsweredIn}} seconds!</span>
+        </div>
+
+        <!-- Answer Screen -->
+        <div id="answerScreen" *ngIf="showAnswerScreen">
+            <h1>Correct Answer is: {{correctAnswer}}</h1>
+        </div>
+
+        <!-- Scoreboard screen -->
+        <div id="scoreboardScreen" *ngIf="showScoreboardScreen">
+            <app-game-nickname-score [userData]="user" *ngFor="let user of roomData"></app-game-nickname-score>
+        </div>
+
+        <!-- Winner screen -->
+        <div id="winnerScreen" *ngIf="showWinnerScreen">
+            <h1> {{winner}} won!</h1>
+            <!-- Play again? -->
+            <!-- Host options should allow user to choose random or in order -->
+        </div>
+        <!-- Volume -->
+        <!-- <mat-icon>volume_off</mat-icon>	
+        <mat-icon>volume_up</mat-icon> -->
+        <input *ngIf="showVolume" type="range" name="" id="volume" step=0.01 min=0 max=1 #ref [value]="volume" (input)="updateVolume(ref.value)">
+
+</div>

@@ -1,0 +1,64 @@
+/* Gets rid of bootstrap box shadow on input */
+input:focus, input.form-control:focus {
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#formQuestionCreator{
+  width: 100%;
+  max-width: 65em;
+  padding: 15px;
+  margin: auto;
+}
+
+#formQuestionCreator .checkbox {
+  font-weight: 400;
+}
+
+#formQuestionCreator .form-floating:focus-within {
+  z-index: 2;
+}
+
+#formQuestionCreator input[type="password"], #formQuestionCreator input[type="text"], input[type="email"]{
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/* Form error msg */
+.help-block
+{
+  text-align: left !important;
+  color: red;
+}
+
+
+/* Angular form specific */
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+label{
+  float: left;
+}
+
+.requiredTag{
+  float: left;
+  margin-left: 0.3em;
+  color: rgb(72, 72, 72);
+}
+
+/* Submit Button */
+button{
+  max-width: 12em;
+  margin: 0 auto;
+}
+
+#showSongsButton{
+  display:flex;
+  justify-content: center;
+}

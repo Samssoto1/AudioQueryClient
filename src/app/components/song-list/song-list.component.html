@@ -1,0 +1,17 @@
+<h2>Select a song</h2>
+<span>
+    Search for a song or choose a song from the list below to base your question on.
+</span>
+<div>
+  <input class="form-control" type="text" placeholder="Enter a search value" (keyup)="search(searchBox.value)" #searchBox>
+
+  <mat-selection-list #songList [multiple]="false">
+    <!-- <mat-list-option [selected]="selectedSong" *ngFor="let songs of songData$ | async | songFilter: term;" [value]="songs"> -->
+    <mat-list-option *ngFor="let songs of songData$ | async | songFilter: term;" [value]="songs">
+      {{songs.artist}} - {{songs.title}}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button (click)="getSelectedSong(songList.selectedOptions.selected[0]?.value)" mat-button mat-dialog-close cdkFocusInitial>Okay</button>
+</div>

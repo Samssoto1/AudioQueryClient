@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"], .form-signin input[type="text"], .form-signin input[type="email"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Form error msg */
+.help-block
+{
+  text-align: left !important;
+  color: red;
+}
+
+
+/* Angular form specific */
+input.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
+
+#eye-icon{
+  position: absolute;
+	top: 30%;
+	right: 10px;
+}
+
+/* Reset password */
+#reset-password-div{
+  margin: 0.4em;
+}
+
+#reset-password-btn{
+  cursor: pointer;
+  color: #1a73e8;
+}
+
+#reset-password-btn:hover{
+  text-decoration: underline;
+  color: #155cb8;
+}

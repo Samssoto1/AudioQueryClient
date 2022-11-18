@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Create lobby?</h1>
+<div mat-dialog-content>
+    Would you like to create a lobby to play this quiz?
+</div>
+<div mat-dialog-actions>
+  <button (click)="canPlay = false" mat-button mat-dialog-close>No</button>
+  <button (click)="canPlay = true" mat-button mat-dialog-close cdkFocusInitial>Yes</button>
+</div>

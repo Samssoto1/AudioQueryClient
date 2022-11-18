@@ -1,0 +1,20 @@
+<main *ngIf="isLoaded" class="container">
+    <div id="gamePinBox" class="text-center">
+        <h1>Invite and play with your friends using:</h1>
+        <span><strong>Game Pin</strong>: {{roomId}}</span>
+        <button *ngIf="isHost" (click)="startGameBtn()" mat-button>Start</button>
+    </div>
+    <!-- IF HOST -->
+    <div>
+        <div *ngFor="let users of users$ | async">
+            <span>{{users}}</span>
+
+            <!-- OnHover have profile view if username avaliable -->
+            <!-- Title if username avaliable-->
+            <!-- WinPoints if username avaliable -->
+            <!-- Featured Achievement if username avaliable-->
+
+
+        </div>
+    </div>
+</main>

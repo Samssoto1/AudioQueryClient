@@ -1,0 +1,17 @@
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0px;
+}
+
+.mat-dialog-actions{ /* Used to override styling by Material */
+    display: block;
+}
+
+.selected{
+    color: purple;
+}

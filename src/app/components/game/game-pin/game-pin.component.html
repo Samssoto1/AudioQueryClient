@@ -1,0 +1,20 @@
+  <body class="d-flex h-100 text-center">
+  
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    
+        <main class="form-signin">
+            <form (ngSubmit)="onPinSubmit()" #f="ngForm">
+              <!-- <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+              <h4 class="d-flex justify-content-center">SongSleuth</h4>
+              <!-- <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->
+          
+              <div class="form-floating">
+                <input ngModel required name="pin" #pin="ngModel" type="text" class="form-control" id="floatingInput" placeholder="...">
+                <label for="floatingInput">Game Pin</label>
+                <span class="help-block d-flex justify-content-left m-2" *ngIf="!pin.valid && pin.touched">Please enter a game pin to play!</span>
+              </div>
+          
+              <button class="w-100 btn btn-lg btn-primary" [disabled]="!f.valid" type="submit">Enter</button>
+              <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
+            </form>
+        </main>

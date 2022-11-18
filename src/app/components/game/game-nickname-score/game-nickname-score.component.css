@@ -1,0 +1,16 @@
+div{
+    display: flex;
+}
+
+span{
+    margin: 0.3em;
+    font-size: 1.8em;
+}
+
+#check{
+    color: green;
+}
+
+#close{
+    color: red;
+}

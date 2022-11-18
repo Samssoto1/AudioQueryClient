@@ -1,0 +1,27 @@
+.quiz-cont{
+    background-color: lightblue;
+    padding: 1em;
+    overflow: auto;
+    border-radius: 1% black;
+    border-style: outset;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-title{
+    text-align: left;
+    margin-right: 38em;
+    font-size: 1.3em;
+}
+
+.quiz-btns{
+    margin-left: 1em;
+}
+
+
+/* a{
+    padding: 1em;
+    border-radius: 1% black;
+    border-style: outset;
+} */
+

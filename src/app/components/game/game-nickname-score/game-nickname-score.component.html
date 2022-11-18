@@ -1,0 +1,7 @@
+<div>
+    <span id="check" *ngIf="userData?.answerCorrect"><mat-icon>check</mat-icon></span>
+    <span id="close" *ngIf="!userData?.answerCorrect"><mat-icon>close</mat-icon></span>
+    <span>{{userData?.nickname}}</span>
+    <span>{{userData?.score}}</span>
+</div>
+

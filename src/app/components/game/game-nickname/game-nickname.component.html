@@ -1,0 +1,22 @@
+<body class="text-center">
+    <div class="form-floating" *ngIf="isLoggedIn">
+        <h4 class="d-flex justify-content-center">Nickname</h4>
+        <button class="w-100 btn btn-lg btn-primary" (click)="useNick()" type="button">Yes</button>
+        <button class="w-100 btn btn-lg btn-primary" (click)="useUsername()" type="button">No</button>
+    </div>
+
+    <main class="form-signin">
+        <form (ngSubmit)="onFormSubmit()" #f="ngForm">
+          <h1 class="h3 mb-3 fw-normal">Enter your desired nickname below</h1>
+      
+          <div class="form-floating">
+            <input required name="nickname" #nickname="ngModel" type="text" class="form-control" id="floatingInput" placeholder="Nickname" [ngModel]="nick">
+            <label for="floatingInput">Nickname</label>
+          </div>
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!nickname.valid && nickname.touched">Please enter a valid nickname</span>
+    
+          <button class="w-100 btn btn-lg btn-primary" [disabled]="!f.valid" type="submit">Next</button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
+        </form>
+    </main>
+    </body>

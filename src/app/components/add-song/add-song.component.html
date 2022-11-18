@@ -1,0 +1,17 @@
+    <main class="form-signin">
+        <form (ngSubmit)="onAddSong()" #f="ngForm">
+          <h4 class="d-flex justify-content-center">SongSleuth</h4>
+          <h1 class="h3 mb-3 fw-normal">Song Submission:</h1>
+      
+          <div class="form-floating">
+            <input ngModel required name="songInput" #songInput="ngModel" type="input" class="form-control" id="floatingInput" placeholder="name@example.com">
+
+            <!-- <input ngModel required name="songInput" #songInput="ngModel" type="file" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+
+
+          </div>
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!songInput.valid && songInput.touched">Please enter your email!</span>
+
+          <button class="w-100 btn btn-lg btn-primary" [disabled]="!f.valid" type="submit">Submit Song</button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p>
+        </form>

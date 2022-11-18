@@ -1,0 +1,73 @@
+<div id="loginContainer">
+  <!-- This div has flex on it. Main can't be separated by a div.. -->
+  <main id="formSignin" class="text-center">
+    <h4 class="d-flex justify-content-center">AudioQuery</h4>
+    <div class="card bg-light">
+      <div class="card-body">
+        <!-- <div class="d-flex justify-content-center align-items-center"> -->
+          <h1 class="h1 mb-1 fw-normal text-white ">Sign In</h1>
+          <img id="mascot" class="text-center" src="../../../assets/images/audioQueryMascot" alt="">
+        <!-- </div> -->
+        <form (ngSubmit)="onLoginSubmit()" #f="ngForm">
+
+          <!-- Email Input -->
+          <div class="form-floating">
+            <input [class.is-invalid]="!email.valid && email.touched" ngModel required name="email" #email="ngModel" type="email" class="form-control" id="floatingInput"
+              placeholder=" ">
+
+              <!-- "(!email.valid && email.touched) ? 'form-control is-invalid'" -->
+
+            <label class="d-flex" for="floatingInput">
+              <mat-icon> email </mat-icon>Email address
+            </label>
+          </div>
+
+          <!-- Email Error Message -->
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!email.valid && email.touched">Please enter a valid
+            email address.
+          </span>
+
+          <!-- Password Input -->
+          <div class="form-floating">
+            <input ngModel required [type]="showPassword ? 'text' : 'password'" name="password" #password="ngModel"
+              type="password" class="form-control" id="floatingPassword" placeholder=" ">
+            <label for="floatingPassword" class="d-flex">
+              <mat-icon> vpn_key</mat-icon> Password
+            </label>
+            <mat-icon id="eye-icon" matSuffix (click)="toggleShow()">
+              {{showPassword?'visibility_off':'visibility'}}
+            </mat-icon>
+          </div>
+
+          <!-- Password Error Message -->
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!password.valid && password.touched">Please
+            enter your AudioQuery pasword.</span>
+
+            <!-- Server Error Response Message-->
+          <!-- <div class="alert alert-danger" *ngIf="(!email.dirty && !password.dirty) && !this.successfulLogin && (error$ | async); let error"> -->
+          <div class="alert alert-danger" *ngIf="(!email.dirty && !password.dirty) && !this.hideError && error">
+            {{error}}
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <!-- Sign In Btn -->
+            <button class="w-100 btn btn-lg" [disabled]="!f.valid" type="submit">Sign in</button>
+            <!-- <button class="w-100 btn btn-lg btn-primary" [disabled]="!f.valid" type="submit">Sign in</button> -->
+            <!-- Reset Password Btn -->
+            <div id="reset-password-div">
+              <span (click)="forgotPassword()" id="reset-password-btn">Forgot Password?</span>
+            </div>
+          </div>
+
+
+          <!-- Sign Up Btn -->
+          <div id="signUpDiv">
+            <span class="text-white">Don't have an account? <span id="signUpBtn" (click)="signUp()">Sign Up</span></span>
+          </div>
+
+          <!-- <p class="mt-5 mb-3 text-white">&copy; 2022–2022</p> -->
+        </form>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,92 @@
+<div id="registerContainer">
+  <!-- This div has flex on it. Main can't be separated by a div.. -->
+  <main id="formRegister" class="text-center">
+    <!-- <form (ngSubmit)="onRegisterSubmit()" #f="ngForm"> -->
+      <h4 class="d-flex justify-content-center">AudioQuery</h4>
+      <div class="card bg-light">
+        <div class="card-body">
+          <h1 class="h3 mb-3 fw-normal text-white">Register Here</h1>
+          <img id="mascot" class="text-center" src="../../../assets/images/audioQueryMascot" alt="">
+    <form (ngSubmit)="onRegisterSubmit()" #f="ngForm">
+
+          <!-- Username Input -->
+          <div class="form-floating">
+            <input ngModel required minlength="3" maxlength="15" #username="ngModel" type="text" name="username" class="form-control" id="username"
+              placeholder=" ">
+            <label class="d-flex" for="username">
+              <mat-icon>account_box</mat-icon>
+              Username</label>
+          </div>
+
+          <!-- Username Error Message -->
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!username.valid && username.touched"> Usernames must be within 3 and 15 characters.
+          </span>
+
+          <!-- Email Input -->
+          <div class="form-floating">
+            <input ngModel pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required name="email" #email="ngModel" type="email" class="form-control" id="floatingInput"
+              placeholder=" ">
+
+            <label class="d-flex" for="floatingInput">
+              <mat-icon> email </mat-icon>Email address
+            </label>
+          </div>
+
+          <!-- Email Error Message -->
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!email.valid && email.touched">Please enter a
+            valid email!
+          </span>
+
+          <!-- Password Input -->
+          <div class="form-floating">
+            <input ngModel required [type]="showPassword ? 'text' : 'password'" name="password" #password="ngModel"
+              type="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" class="form-control" id="floatingPassword" placeholder=" ">
+            <label for="floatingPassword" class="d-flex">
+              <mat-icon> vpn_key</mat-icon> Password
+            </label>
+            <mat-icon id="eye-icon" matSuffix (click)="toggleShow()">
+              {{showPassword?'visibility_off':'visibility'}}
+            </mat-icon>
+          </div>
+
+          <!-- Password Error Message -->
+          <span class="help-block d-flex justify-content-left m-2" *ngIf="!password.valid && password.touched">
+            <ul class="p-0 ms-3">
+              <li>Password should be alphanumeric</li>
+              <li>A letter of the password should be capital</li>
+              <li>Password must contain a special character (@, $, !, &, etc) </li>
+              <li>Password length must be greater than 7 characters</li>
+            </ul>
+          </span>
+
+          <!-- Password Confirmation Input -->
+          <div class="form-floating">
+            <input ngModel required #passwordConfirmation="ngModel" type="password" name="passwordConfirmation"
+              class="form-control" id="floatingPasswordConfirmation" placeholder=" ">
+            <label class="d-flex" for="floatingPassword">
+              <mat-icon>check_circle</mat-icon>
+              Confirm Password</label>
+          </div>
+
+          <!-- Password Confirmation Error Message -->
+          <span class="help-block d-flex justify-content-left m-2"
+            *ngIf="(password.value != passwordConfirmation.value && passwordConfirmation.touched) || (passwordConfirmation.value=='' && passwordConfirmation.touched)">Please
+            enter the same password
+          </span>
+
+          <!-- Server Error Response Message-->
+          <!-- <div class="alert alert-danger" *ngIf="(!email.dirty && !password.dirty) && !this.successfulLogin && (error$ | async); let error"> -->
+            <div class="alert alert-danger" *ngIf="(!username.dirty && !email.dirty && !password.dirty &&!passwordConfirmation.dirty) && !this.hideServerResponseMsg && serverResponseMsg">
+              {{serverResponseMsg}}
+            </div>
+
+          <!-- Sign Up Btn -->
+          <button class="w-100 btn btn-lg mt-4" type="submit"
+            [disabled]="!f.valid || ((password.value != passwordConfirmation.value) && passwordConfirmation.touched)">Create
+            Account</button>
+          <!-- <p class="mt-5 mb-3 text-muted">&copy; 2022–2022</p> -->
+        </form>
+        </div>
+      </div>
+  </main>
+</div>

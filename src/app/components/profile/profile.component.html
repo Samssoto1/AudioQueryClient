@@ -1,0 +1,46 @@
+<main>
+  <div class="container-fluid">
+    <div class="container py-4">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div id="profileContainer" class="py-5">
+          <div id="profileBox">
+            <div id="imgBox">
+              <img id="profilePicture" class="img-responsive img-thumbnail" src={{imgUrl}} alt="profile picture">
+              <img id="favoritedAchievement" src="https://freesvg.org/img/Prismatic-Hand-Cursor-Pointer-Grid.png" alt="">
+            </div>
+            <div>
+              <h1 class="display-5 fw-bold">{{username}}</h1>
+            </div>
+
+
+            <div id="profileAdditional">
+              <span class="h3">Account created: {{registrationDate | date: 'longDate' }}</span>
+            </div>
+            <span id="title">The Destroyer of Worlds</span>
+            <span class="h2">Level: {{level}}</span>
+          </div>
+        </div>
+        <div id="achievementContainer">
+          <span class="h4">Achievements</span>
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <!-- Later implement ngFor achievement array load link to img -->
+                <!-- Hover keeps detail on achieve -->
+                <div id="achievements"><img class="achievement img-responsive" src="https://freesvg.org/img/Prismatic-Hand-Cursor-Pointer-Grid.png" alt=""></div>
+              </mat-expansion-panel-header>
+              <span>Additional achievements here</span>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+
+      <div class="col-md-12" *ngIf="isGuest == false">
+        <h2 id="quiz-header">Quizzes</h2>
+        <hr>
+        <app-quiz-list [userId]="userId"></app-quiz-list>
+      </div>
+
+    </div>
+  </div>
+  </main>
