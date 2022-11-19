@@ -96,7 +96,7 @@ input.ng-invalid.ng-touched{
 
 .card{
   /* background-image: url("../../../assets/images/SignInBackground"); */
-  background:linear-gradient(0deg, rgba(183, 149, 237, 0.3), rgba(245, 238, 242, 0.3)), url('../../../assets/images/SignInBackground');
+  background:linear-gradient(0deg, rgba(183, 149, 237, 0.3), rgba(245, 238, 242, 0.3)), url('../../../assets/images/SignInBackground.jpg');
   background-repeat: no-repeat, repeat;
   background-size: cover; /* Resize the background image to cover the entire container */
   background-position: center;

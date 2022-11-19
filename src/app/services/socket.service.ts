@@ -11,11 +11,11 @@ import { take, fromEvent } from 'rxjs'
 export class SocketService {
 
   // taken out for build (Must edit app.module as well)
-  // private socket = io(environment.socketUrl); 
+  private socket = io(environment.socketUrl); 
   // Dev
   // private socket = io("http://localhost:8000");
   // Dev
-  private socket = io("https://audioquery.up.railway.app")
+  // private socket = io("https://audioquery.up.railway.app")
 
   
 
